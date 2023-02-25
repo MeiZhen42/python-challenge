@@ -3,10 +3,12 @@ import csv
 from statistics import mean
 
 # import the cvs file of raw data
-FilePath= os.path.join("Resources", "Resources", "budget_data.csv")
+FilePath= os.path.join("Resources", "budget_data.csv")
 MonthList = []
 ProfitMargin = []
 
+# formatting csv and placing specific columns from csv into 
+# empty lists from above
 with open(FilePath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     header = next(csvreader)
@@ -14,41 +16,41 @@ with open(FilePath) as csvfile:
         MonthList.append(row[0])
         ProfitMargin.append(int(row[1]))
 
-# Changes in profit from month to month
+# read the for loop and place the monthly change in profit in to empty list
 ProfitChange = []
 
-# Calculates the difference of profit gain to loss in loop
 for i in range(1,len(ProfitMargin)):
     ProfitChange.append(ProfitMargin[i]-ProfitMargin[i-1])
         # think in terms of ojects (make lists)
-# sum Date column
+
+# sum of total months in period
 TotalMonths = len(MonthList)
 
-# net of profit/loss within a period
+# sum of profit
 TotalProfitLoss = sum(ProfitMargin)
 
-# average of the changes
+# average profit 
 AvProfitChanges = mean(ProfitChange)
 
-# largest increase change over a period
+# most profit made in a month
 MaxProfit = max(ProfitChange)
 
-# largest decrease change over a period
+# most profit lost in a month 
 MinProfit = min(ProfitChange)
 
+# month that had the most profit gain   
 MaxMonth = MonthList[ProfitChange.index(MaxProfit) + 1]
-print(MaxMonth)
 
+# month that had the most profit loss
 MinMonth = MonthList[ProfitChange.index(MinProfit) + 1]
-print(MinProfit)
 
 # Summary output
 # \ indicated new line in python
-with open("CompleteAssign3.txt", "w", newline="") as textfile:
+with open("CompleteAssignPyBank.txt", "w", newline="") as textfile:
     textfile.write(f"FinacialAnalysis \n TotalMonths: {TotalMonths} \n \
-        Total: {TotalProfitLoss} \n AverageChange: {AvProfitChanges} \n \
-            GreatestProfitIncrease: {MaxProfit} MaxMonth: {MaxMonth} \n \
-                GreatestProfitDecrease: {MinProfit} MinMonth: {MinMonth}")
+    Total: {TotalProfitLoss} \n AverageChange: {AvProfitChanges} \n \
+    GreatestProfitIncrease: {MaxMonth} ${MaxProfit} \n \
+    GreatestProfitDecrease: {MinMonth} ${MinProfit}")
 
 # For dataset too big to see in Excel
 
