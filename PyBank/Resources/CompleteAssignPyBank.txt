@@ -2,4 +2,5 @@ FinacialAnalysis
  TotalMonths: 86 
      Total: 22564198 
  AverageChange: -8311.105882352942 
-     GreatestProfitIncrease: 16-Aug $1862002     GreatestProfitDecrease: 14-Feb $-1825558
+     GreatestProfitIncrease: 16-Aug $1862002 
+     GreatestProfitDecrease: 14-Feb $-1825558

@@ -46,6 +46,12 @@ MinMonth = MonthList[ProfitChange.index(MinProfit) + 1]
 
 # Summary output
 # \ indicated new line in python
+print(f"FinacialAnalysis \n------------------------\nTotalMonths: {TotalMonths} \n\
+    Total: {TotalProfitLoss} \nAverageChange: {AvProfitChanges} \n\
+    GreatestProfitIncrease: {MaxMonth} ${MaxProfit} \n\
+    GreatestProfitDecrease: {MinMonth} ${MinProfit}"
+)
+
 with open("CompleteAssignPyBank.txt", "w", newline="") as textfile:
     textfile.write(f"FinacialAnalysis \n TotalMonths: {TotalMonths} \n \
     Total: {TotalProfitLoss} \n AverageChange: {AvProfitChanges} \n \
