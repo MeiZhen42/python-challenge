@@ -42,6 +42,10 @@ print(Winner)
 
 # Summary output
 # \ indicated new line in python
+print(
+    "Election Results \n Total Votes: {TotalVotes} \n Charles Casper Stockham: {CCSVotes}% \n Diana DeGette: {DDVotes}% \n Raymon Anthony Doane: {RADVotes}% \n Winner: {Winner}")
+)
+
 with open("CompleteAssignPyPoll.txt", "w", newline="") as textfile:
     textfile.write(f"Election Results \n Total Votes: {TotalVotes} \n Charles Casper Stockham: {CCSVotes}% \n Diana DeGette: {DDVotes}% \n Raymon Anthony Doane: {RADVotes}% \n Winner: {Winner}")
 
